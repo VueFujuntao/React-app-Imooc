@@ -8,7 +8,11 @@
     "build": "webpack --config ./build/webpack.config.prod.js",
     "mock": "node --harmony ./mock/server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "React",
+    "Webpack",
+    "React-router"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
