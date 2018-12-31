@@ -1,9 +1,3 @@
-/*
- * @Author: fujuntao
- * @Date: 2018-12-26 20:11:58
- * @Last Modified by: fujuntao
- * @Last Modified time: 2018-12-26 20:12:23
- */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './views/app.jsx';

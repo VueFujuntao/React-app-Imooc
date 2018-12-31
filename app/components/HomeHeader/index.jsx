@@ -1,17 +1,10 @@
-/*
- * @Author: fujuntao
- * @Date: 2018-12-26 20:11:28
- * @Last Modified by:   fujuntao
- * @Last Modified time: 2018-12-26 20:11:28
- */
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './style.less';
 
 class HomeHeader extends React.Component{
   constructor(props, context) {
-    super(props);
-    console.log(this.props)
+    super(props, context);
   }
   render() {
     return (

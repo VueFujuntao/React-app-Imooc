@@ -14,7 +14,6 @@ class City extends Component {
   }
 
   componentDidMount() {
-    console.log(111);
   }
   
 }
