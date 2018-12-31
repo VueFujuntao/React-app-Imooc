@@ -24,7 +24,7 @@ class Home extends Component {
         <Category/>
         <div style={{height: '15px'}}></div>
         <Ad/>
-        <List/>
+        <List cityName={this.props.userinfo.cityName}/>
       </div>
     );
   }
