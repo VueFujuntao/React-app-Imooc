@@ -12,19 +12,19 @@ import List from './subpage/List.jsx';
 
 class Home extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       initDone: false
     }
   }
   render() {
-    return(
+    return (
       <div>
-        <HomeHeader cityName={this.props.userinfo.cityName}/>
-        <Category/>
-        <div style={{height: '15px'}}></div>
-        <Ad/>
-        <List cityName={this.props.userinfo.cityName}/>
+        <HomeHeader cityName={this.props.userinfo.cityName} />
+        <Category />
+        <div style={{ height: '15px' }}></div>
+        <Ad />
+        <List cityName={this.props.userinfo.cityName} />
       </div>
     );
   }
@@ -32,14 +32,14 @@ class Home extends Component {
     // 获取位置信息
     let cityName = LocalStore.getItem(CITYNAME)
     if (cityName == null) {
-        cityName = '北京';
+      cityName = '北京';
     }
     this.props.userInfoActions.update({
-        cityName: cityName
+      cityName: cityName
     })
     // 更改状态
     this.setState({
-        initDone: true
+      initDone: true
     });
   }
 }
@@ -52,7 +52,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-      userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch),
+    userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch),
   }
 }
 

@@ -22,14 +22,14 @@ class List extends Component {
         {/* 列表 */}
         {
           this.state.data.length > 0
-          ? <ListComponent data={this.state.data}/>
-          : <div>加载中...</div>
+            ? <ListComponent data={this.state.data} />
+            : <div>加载中...</div>
         }
         {/* loadmore */}
         {
           this.state.hasMore
-          ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreDataFn={this.loadMoreData}/>
-          : ''
+            ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreDataFn={this.loadMoreData} />
+            : ''
         }
       </div>
     );
@@ -39,7 +39,7 @@ class List extends Component {
   }
   loadFirstPageData() {
     const cityName = this.props.cityName;
-    const data =  [
+    const data = [
       {
         img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201638030-473660627.png',
         title: '汉堡大大',
@@ -100,7 +100,7 @@ class List extends Component {
     const cityName = this.props.cityName;
     const page = this.state.page;
     const hasMore = true;
-    const data =  [
+    const data = [
       {
         img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201638030-473660627.png',
         title: '汉堡大大',

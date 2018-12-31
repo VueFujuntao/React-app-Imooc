@@ -5,17 +5,14 @@ import './style.less'
 class LoadMore extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      timeOutId: null
-    }
   }
   render() {
     return (
       <div className="load-more" ref="wrapper">
         {
           this.props.isLoadingMore
-          ? <span>加载中...</span>
-          : <span onClick={this.loadMoreHandle}>加载更多</span>
+            ? <span>加载中...</span>
+            : <span onClick={this.loadMoreHandle}>加载更多</span>
         }
       </div>
     )
@@ -33,21 +30,16 @@ class LoadMore extends React.Component {
         loadMoreFn();
       }
     }
+    let timeOutId = null;
     window.addEventListener('scroll', (res) => {
       if (this.props.isLoadingMore) return;
-      if (this.state.timeOutId) {
-        clearTimeout(this.state.timeOutId);
+      if (timeOutId) {
+        clearTimeout(timeOutId);
       }
-      this.setState({
-        timeOutId: setTimeout(callBack, 50)
-      })
+      timeOutId = setTimeout(callBack, 50);
     }, false);
   }
   componentWillUnmount() {
-    clearTimeout(this.state.timeOutId);
-    this.setState({
-      timeOutId: null
-    })
   }
 }
 

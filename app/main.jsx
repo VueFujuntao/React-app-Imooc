@@ -20,7 +20,7 @@ if (module.hot) {
     const NextApp = require('./views/app').default;
     ReactDOM.render(
       <Provider store={store}>
-        <NextApp/>
+        <NextApp />
       </Provider>,
       el
     );

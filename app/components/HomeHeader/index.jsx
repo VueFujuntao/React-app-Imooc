@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './style.less';
 
-class HomeHeader extends React.Component{
+class HomeHeader extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -22,7 +22,7 @@ class HomeHeader extends React.Component{
         <div className="home-header-middle">
           <div className="search-container">
             <i className="icon-search"></i>
-            <input type="text" placeholder="请输入关键字"/>
+            <input type="text" placeholder="请输入关键字" />
           </div>
         </div>
       </div>

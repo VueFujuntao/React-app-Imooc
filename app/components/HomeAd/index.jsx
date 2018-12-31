@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import './style.less'
+import './style.less';
 
-class HomeAd extends React.Component {
+export default class HomeAd extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -24,5 +24,3 @@ class HomeAd extends React.Component {
     )
   }
 }
-
-export default HomeAd;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getData } from '@/axios/index.js';
 import HomeAd from '@/components/HomeAd/index.jsx';
 
 class Ad extends Component {
@@ -45,13 +44,12 @@ class Ad extends Component {
       <div>
         {
           this.state.ad.length
-          ? <HomeAd ad={this.state.ad}/>
-          : <div>加载中....</div>
+            ? <HomeAd ad={this.state.ad} />
+            : <div>加载中....</div>
         }
       </div>
     );
   }
-  componentDidMount() {
-  }
 }
+
 export default Ad;
