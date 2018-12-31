@@ -1,4 +1,1 @@
-export {
-  getData
-}
-from './Home/home.js';
+export { getData } from './Home/home.js';

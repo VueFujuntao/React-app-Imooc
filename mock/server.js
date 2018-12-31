@@ -29,8 +29,6 @@ router.get('/api/homelist/:city/:page', function* (next) {
   this.body = homeListData
 });
 
-
-
 // 开始服务并生成路由
 app.use(router.routes())
   .use(router.allowedMethods());

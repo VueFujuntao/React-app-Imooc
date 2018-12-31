@@ -16,16 +16,16 @@ class App extends Component {
     super();
   }
   render() {
-    return(
+    return (
       <HashRouter>
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/city" component={City}/>
-          <Route path="/Search" component={Search}/>
-          <Route path="/User" component={User}/>
-          <Route path="*" component={NotFound}/>
+          <Route path="/" exact component={Home} />
+          <Route path="/city" component={City} />
+          <Route path="/Search" component={Search} />
+          <Route path="/User" component={User} />
+          <Route path="*" component={NotFound} />
         </Switch>
-      </HashRouter> 
+      </HashRouter>
     );
   }
 }

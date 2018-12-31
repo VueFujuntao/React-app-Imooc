@@ -1,9 +1,3 @@
-/*
- * @Author: fujuntao
- * @Date: 2018-12-26 20:11:14
- * @Last Modified by: fujuntao
- * @Last Modified time: 2018-12-26 21:09:01
- */
 import React from 'react';
 import ReactSwipe from 'react-swipe';
 import './style.less';

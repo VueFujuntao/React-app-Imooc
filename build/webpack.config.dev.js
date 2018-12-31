@@ -25,8 +25,7 @@ module.exports = {
     enforceExtension: false,
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.jsx$/,
         include: path.resolve(__dirname, '../app'),
         use: {
@@ -38,57 +37,55 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-            {loader: "style-loader"},
-            {loader: "css-loader"},
-            {
-                loader: "postcss-loader",
-                options: {           // 如果没有options这个选项将会报错 No PostCSS Config found
-                    plugins: [
-                        require('autoprefixer')("last 100 versions"), //CSS浏览器兼容
-                    ]
-                }
+        use: [{
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "postcss-loader",
+            options: { // 如果没有options这个选项将会报错 No PostCSS Config found
+              plugins: [
+                require('autoprefixer')("last 100 versions"), //CSS浏览器兼容
+              ]
             }
+          }
         ]
       },
       {
         test: /\.less$/,
-        use: [
-            {
-              loader: "style-loader"
-            },
-            {
-                loader: "css-loader"
-            },
-            {
-              loader: 'less-loader'
-            }
+        use: [{
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: 'less-loader'
+          }
         ]
       },
       {
-          test: /\.(png|jpg|gif|jpeg)/,  //是匹配图片文件后缀名称
-          use:[
-              {
-                  loader: 'url-loader', //是指定使用的loader和loader的配置参数
-                  options:{
-                      limit: 20000,  //是把小于500B的文件打成Base64的格式，写入JS
-                      name: 'static/img/[name].[hash:7].[ext]'
-                  }
-              }
-          ],
-          exclude: /node_modules/
+        test: /\.(png|jpg|gif|jpeg)/, //是匹配图片文件后缀名称
+        use: [{
+          loader: 'url-loader', //是指定使用的loader和loader的配置参数
+          options: {
+            limit: 20000, //是把小于500B的文件打成Base64的格式，写入JS
+            name: 'static/img/[name].[hash:7].[ext]'
+          }
+        }],
+        exclude: /node_modules/
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-        use: [
-          {
-            loader:'url-loader',
-            options: {
-              limit: 20000,  //是把小于500B的文件打成Base64的格式，写入JS
-              name: 'static/fonts/[name].[hash:7].[ext]',
-            }
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 20000, //是把小于500B的文件打成Base64的格式，写入JS
+            name: 'static/fonts/[name].[hash:7].[ext]',
           }
-        ]
+        }]
       }
     ]
   },
