@@ -11,8 +11,8 @@ import Ad from './subpage/Ad.jsx';
 import List from './subpage/List.jsx';
 
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       initDone: false
     }
