@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom';
+// 样式
 import './style.less';
+// 组件
+import SearchInput from '@/components/SearchInput/index.jsx';
 
 class HomeHeader extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      kwd: ''
+    }
   }
   render() {
     return (
@@ -22,12 +28,15 @@ class HomeHeader extends React.Component {
         <div className="home-header-middle">
           <div className="search-container">
             <i className="icon-search"></i>
-            <input type="text" placeholder="请输入关键字" />
+            <SearchInput type="text" value='' enterHandleFn={this.enterHandle}/>
           </div>
         </div>
       </div>
     )
   }
+  enterHandle = (value) => {
+    this.props.history.push(`/search/all/${encodeURIComponent(value)}`)
+  }
 }
 
-export default HomeHeader
+export default withRouter(HomeHeader);
