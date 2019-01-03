@@ -4,8 +4,7 @@
 
 # 技术栈
 
-``` bash
-ES6/7 + React 16.7.0 + react-redux 6.0.0 + webpack 4.19.1
+> ES6/7 + React 16.7.0 + react-redux 6.0.0 + webpack 4.19.1
 
 ## 项目运行
 
