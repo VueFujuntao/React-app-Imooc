@@ -16,7 +16,6 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
-    // 范围减少 大致减少了 200ms
     modules: [path.resolve(__dirname, '..', 'node_modules')],
     alias: {
       "@": path.resolve(__dirname, '..', 'app'),
@@ -29,49 +28,26 @@ module.exports = {
         test: /\.jsx$/,
         include: path.resolve(__dirname, '../app'),
         use: {
-          loader: "babel-loader?cacheDirectory",
-          options: {
-            presets: ["env", "stage-0", "react"]
-          }
+          loader: "babel-loader?cacheDirectory"
         }
       },
       {
-        test: /\.css$/,
-        use: [{
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader"
-          },
-          {
-            loader: "postcss-loader",
-            options: { // 如果没有options这个选项将会报错 No PostCSS Config found
-              plugins: [
-                require('autoprefixer')("last 100 versions"), //CSS浏览器兼容
-              ]
-            }
-          }
+        test: /\.(le|c)ss$/,
+        include: path.resolve(__dirname, '..', 'app'),
+        use: [
+          'style-loader',
+          "css-loader",
+          'postcss-loader',
+          'less-loader',
         ]
       },
       {
-        test: /\.less$/,
+        test: /\.(png|jpg|gif|jpeg)/,
+        include: path.resolve(__dirname, '..', 'app'),
         use: [{
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader"
-          },
-          {
-            loader: 'less-loader'
-          }
-        ]
-      },
-      {
-        test: /\.(png|jpg|gif|jpeg)/, //是匹配图片文件后缀名称
-        use: [{
-          loader: 'url-loader', //是指定使用的loader和loader的配置参数
+          loader: 'url-loader',
           options: {
-            limit: 20000, //是把小于500B的文件打成Base64的格式，写入JS
+            limit: 20000,
             name: 'static/img/[name].[hash:7].[ext]'
           }
         }],
@@ -79,10 +55,11 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        include: path.resolve(__dirname, '..', 'app'),
         use: [{
           loader: 'url-loader',
           options: {
-            limit: 20000, //是把小于500B的文件打成Base64的格式，写入JS
+            limit: 20000,
             name: 'static/fonts/[name].[hash:7].[ext]',
           }
         }]
