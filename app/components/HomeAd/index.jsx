@@ -1,5 +1,5 @@
 import React from 'react';
-
+import proptypes from 'prop-types'
 import './style.less';
 
 export default class HomeAd extends React.Component {
@@ -23,4 +23,8 @@ export default class HomeAd extends React.Component {
       </div>
     )
   }
+}
+
+HomeAd.proptypes = {
+  ad: proptypes.array
 }

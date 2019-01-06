@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import proptypes from 'prop-types';
 // 样式
 import './style.less';
 // 组建
@@ -195,6 +196,10 @@ class List extends Component {
     });
     this.resultHandle(data, hasMore);
   }
+}
+
+List.proptypes = {
+  cityName: proptypes.number
 }
 
 export default List;

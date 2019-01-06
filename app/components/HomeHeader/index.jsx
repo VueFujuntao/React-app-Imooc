@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import proptypes from 'prop-types';
 // 样式
 import './style.less';
 // 组件
@@ -23,12 +24,14 @@ class HomeHeader extends React.Component {
           </Link>
         </div>
         <div className="home-header-right float-right">
-          <i className="icon-user"></i>
+          <Link to="/login">
+            <i className="icon-user"></i>
+          </Link>
         </div>
         <div className="home-header-middle">
           <div className="search-container">
             <i className="icon-search"></i>
-            <SearchInput type="text" value='' enterHandleFn={this.enterHandle}/>
+            <SearchInput type="text" value='' enterHandleFn={this.enterHandle} />
           </div>
         </div>
       </div>
@@ -37,6 +40,10 @@ class HomeHeader extends React.Component {
   enterHandle = (value) => {
     this.props.history.push(`/search/all/${encodeURIComponent(value)}`)
   }
+}
+
+HomeHeader.proptypes = {
+  cityName: proptypes.number
 }
 
 export default withRouter(HomeHeader);
