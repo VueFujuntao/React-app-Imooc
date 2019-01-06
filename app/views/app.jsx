@@ -8,6 +8,7 @@ import Search from './Search/index.jsx';
 import User from './User/index.jsx';
 import NotFound from './NotFound/index.jsx';
 import Detail from './Detail/index.jsx';
+import Login from './Login/index.jsx';
 // 全局样式
 import '@/static/css/common.less';
 import '@/static/css/font.css';
@@ -25,6 +26,7 @@ class App extends Component {
           <Route path="/Search/:category/:keyword?" component={Search} />
           <Route path="/User" component={User} />
           <Route path="/Detail/:id" component={Detail} />
+          <Route path="/login/:router?" component={Login} />
           <Route path="*" component={NotFound} />
         </Switch>
       </HashRouter>
