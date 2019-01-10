@@ -96,12 +96,14 @@ module.exports = {
       favicon: './public/favicon.ico',
       title: 'React',
       minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeEmptyAttributes: true,
+        caseSensitive:false,// 是否大小写敏感
+        removeComments: true,// 去注释
+        collapseWhitespace: true,// 是否去除空格
+        removeEmptyAttributes: true, // 去除空属性
         removeTagWhitespace: true,
-        removeAttributeQuotes: true
-      }
+        removeAttributeQuotes: true// 去掉属性引用
+      },
+      hash: true // 是否生成hash添加在引入文件地址的末尾，这个可以避免缓存带来的麻烦
     }),
     new MiniCssExtractPlugin({
       filename: "static/css/[name].[hash].css",
