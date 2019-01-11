@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 
 const asyncComponent = (importComponent) => {
   return class extends Component {
-    state = {
-      component: null
+    constructor() {
+      super();
+      this.state = {
+        component: null
+      }
     }
     componentDidMount() {
       importComponent() //我们传进来的函数返回我们想要的组件B
