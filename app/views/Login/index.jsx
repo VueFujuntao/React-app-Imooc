@@ -34,10 +34,10 @@ class Login extends Component {
     userinfo.username = username;
     actions.update(userinfo);
     // 登入后路由跳转
-    const router = this.props.match.params.router;
+    const router = this.props.match.params;
     if (router) {
       // 跳转到指定的页面
-      this.props.history.push(router);
+      this.props.history.push(decodeURIComponent(router.router));
   } else {
       // 跳转到用户主页
       this.goUserPage();
@@ -54,9 +54,10 @@ class Login extends Component {
     }
   }
   goUserPage() {
-    this.props.history.push('/user');
+    this.props.history.push(`/user`);
   }
 }
+
 function mapStateToProps(state) {
   return {
     userinfo: state.userinfo
