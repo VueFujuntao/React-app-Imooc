@@ -23,7 +23,6 @@ class City extends Component {
     );
   }
   changeCity = (newCity) => {
-    console.log(newCity);
     if (newCity == null) return;
     // 修改redux
     this.props.userinfo.cityName = newCity;
@@ -32,7 +31,6 @@ class City extends Component {
     LocalStore.setItem(CITYNAME, newCity);
     // 返回首页
     this.props.history.goBack();
-    console.log(this.props.history);
   }
 }
 

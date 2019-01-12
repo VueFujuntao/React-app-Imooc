@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './style.less';
 
-export default class Header extends Component {
+class Header extends Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -16,6 +17,13 @@ export default class Header extends Component {
     );
   }
   clickHandle() {
-    window.history.back();
+    const backRouter = this.props.backRouter;
+    if (backRouter) {
+      this.props.history.push(backRouter);
+    } else {
+      window.history.back();
+    }
   }
 };
+
+export default withRouter(Header);

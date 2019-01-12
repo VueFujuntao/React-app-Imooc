@@ -52,7 +52,6 @@ export default class CityList extends Component {
     );
   }
   clickHandle(cityName) {
-    console.log(cityName);
     this.props.changeCityFn(cityName);
   }
 };

@@ -9,7 +9,6 @@ class Item extends Component {
   }
   render() {
     const data = this.props.item;
-    console.log(data)
     return (
       <div className="list-item clear-fix">
         <Link to={`/detail/${data.id}`}>

@@ -8,7 +8,6 @@ class BuyAndStore extends Component {
     super(props, context);
   }
   render() {
-    console.log(this.props.isStore);
     return (
       <div className="buy-store-container clear-fix">
         <div className="item-container float-left">

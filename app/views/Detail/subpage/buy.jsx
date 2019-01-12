@@ -44,7 +44,6 @@ class Buy extends Component {
   // 购买事件
   buyHandle = () => {
     const loginFlag = this.loginCheck();
-    console.log(loginFlag);
     if (!loginFlag) {
       return;
     }

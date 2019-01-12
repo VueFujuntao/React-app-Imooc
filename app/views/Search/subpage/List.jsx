@@ -258,7 +258,7 @@ class SearchList extends React.Component {
         mumber: '1426'
       }
     ];
-    const page = this.state.page
+    const page = this.state.page;
     this.setState({
       page: page + 1
     });

@@ -30,7 +30,7 @@ class Home extends Component {
   }
   componentDidMount() {
     // 获取位置信息
-    let cityName = LocalStore.getItem(CITYNAME)
+    let cityName = LocalStore.getItem(CITYNAME);
     if (cityName == null) {
       cityName = '北京';
     }
