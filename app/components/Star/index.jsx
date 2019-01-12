@@ -12,7 +12,6 @@ class Star extends Component {
     if (star > 5) {
       star = star % 5;
     }
-
     return (
       <div className="star-container">
         {[1, 2, 3, 4, 5].map((item, index) => {
