@@ -9,13 +9,16 @@ class OrderList extends React.Component {
     super(props, context);
   }
   render() {
-    const data = this.props.data
-
+    const data = this.props.data;
+    const submitCommentFn = this.props.submitCommentFn;
     return (
       <div>
-        {data.map((item, index) => {
-          return <Item key={index} data={item} />
-        })}
+        {data.map((item, index) => <Item
+          key={index}
+          data={item}
+          submitCommentFn={submitCommentFn}
+        />
+        )}
       </div>
     )
   }
